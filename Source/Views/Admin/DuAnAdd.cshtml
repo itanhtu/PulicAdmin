@@ -1,0 +1,57 @@
+﻿@model Project
+@{
+    ViewData["Title"] = "DuAnAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div>
+    <form enctype="multipart/form-data" asp-action="DuAnAdd" method="post" id="uploader">
+        <div class="modal-body">
+            <div asp-validation-summary="All"></div>
+            <p>
+                <label>Tên dự án:</label>
+                <input asp-for="ProjectName" />
+            </p>
+            <p>
+                <label>Nhóm dự án:</label>
+                <select asp-for="CategoryId" asp-items="@(new SelectList(ViewBag.Categories,"CategoryId","CategoryName"))"></select>
+            </p>
+            <p>
+                <label>Loại dịch vụ:</label>
+                <select asp-for="ServiceId" asp-items="@(new SelectList(ViewBag.Service,"ServiceId","ServiceTitle"))"></select>
+            </p>
+            <p>
+                <label>Hiển thị trang chủ:</label>
+                <input asp-for="ProjectHidden" />
+            </p>
+            <p>
+                <label>Link:</label>
+                <input asp-for="ProjectLink" />
+            </p>
+            <p>
+                <label>Nội dung:</label>
+                <input asp-for="ProjectContent" />
+            </p>
+            <p>
+                <label>Ảnh:</label>
+                <input asp-for="Project_UpImage" onchange="showPreview1(this)" />
+                <img id="imgPreview1" style="width:100px" src="/admin_images/up-img.png" />
+            </p>
+        </div>
+        <div class="modal-footer">
+            <button type="submit">Thêm</button>
+            <a asp-action="TinTuc" class="btn btn-default" data-dismiss="modal">Quay lại</a>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    function showPreview1(input) {
+        if (input.files && input.files[0]) {
+            var filerdr = new FileReader();
+            filerdr.onload = function (e) {
+                $('#imgPreview1').attr('src', e.target.result);
+            }
+            filerdr.readAsDataURL(input.files[0]);
+        }
+    }
+</script>

@@ -1,0 +1,32 @@
+﻿@model Tbgroupcate
+@{ 
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div>
+    <form asp-action="NhomLoaiAdd" method="post" id="uploader">
+        <div class="modal-body">
+            <input asp-for="GroupcateId" type="hidden" />
+            <div asp-validation-summary="All"></div>
+            <p>
+                <label>Tên nhóm:</label>
+                <input asp-for="GroupcateName" />
+            </p>
+            <p>
+                <label>Biểu tượng:</label>
+                <input asp-for="GroupcateIcon" />
+            </p>
+            <p>
+                <label>Vị trí:</label>
+                <input asp-for="Position" />
+            </p>
+            <p>
+                <label>Mô tả:</label>
+                <input asp-for="GroupcateDepcription" />
+            </p>
+        </div>
+        <div class="modal-footer">
+            <button type="submit">Sửa</button>
+            <a asp-action="NhomLoai" class="btn btn-default" data-dismiss="modal">Quay lại</a>
+        </div>
+    </form>
+</div>

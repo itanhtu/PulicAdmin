@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "NhomDuAnEdit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@model Tbcategory
+<div>
+
+    <form asp-action="NhomDuAnEdit" method="post" id="uploader">
+        <div class="modal-body">
+            <input type="hidden" asp-for="CategoryId" />
+            <div asp-validation-summary="All"></div>
+            <p>
+                <label>Tên nhóm:</label>
+                <input asp-for="CategoryName" />
+            </p>
+            <p>
+                <label>Nhóm loại dự án:</label>
+                <select asp-for="GroupcateId" asp-items="@(new SelectList(ViewBag.Group,"GroupcateId","GroupcateName"))"></select>
+            </p>
+            <p>
+                <label>Biểu tượng:</label>
+                <input asp-for="CategoryIcon" />
+            </p>
+            <p>
+                <label>Mô tả:</label>
+                <input asp-for="CategoryDepcription" />
+            </p>
+        </div>
+        <div class="modal-footer">
+            <button type="submit">Thêm</button>
+            <a asp-action="NhomDuAn" class="btn btn-default" data-dismiss="modal">Quay lại</a>
+        </div>
+    </form>
+</div>
+

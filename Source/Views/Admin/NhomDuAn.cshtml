@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Source.Models.DBF.Tbcategory>
+
+@{
+    ViewData["Title"] = "NhomDuAn";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>NhomDuAn</h2>
+
+<p>
+    <partial name="NhomDuAnAdd" model="new Tbcategory()" />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryDepcription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryIcon)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryDepcription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryIcon)
+            </td>
+            <td>
+                <a asp-action="NhomDuAnEdit" asp-route-id="@item.CategoryId">Edit</a> |
+                <a asp-action="NhomDuAnDelete" asp-route-id="@item.CategoryId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
