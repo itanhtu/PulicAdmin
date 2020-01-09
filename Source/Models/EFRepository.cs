@@ -223,5 +223,136 @@ namespace Source.Models
                 context.SaveChanges();
             }
         }
+        public void SaveDichVuChiTiet(Tbservicedetail model)
+        {
+            if (model.ServicedetailId == 0)
+            {
+                context.Tbservicedetail.Add(model);
+            }
+            else
+            {
+                Tbservicedetail servicedetail = context.Tbservicedetail
+                    .FirstOrDefault(p => p.ServicedetailId == model.ServicedetailId);
+                if (servicedetail != null)
+                {
+                    servicedetail.ServicedetailTitle = model.ServicedetailTitle;
+                    servicedetail.ServiceId = model.ServiceId;
+                    servicedetail.ServicedetailContent = model.ServicedetailContent;
+                }
+            }
+            context.SaveChanges();
+        }
+        public void DichVuChiTietDelete(int servicedetail_id)
+        {
+            var servicedetail = context.Tbservicedetail.FirstOrDefault(x => x.ServicedetailId == servicedetail_id);
+            if (servicedetail != null)
+            {
+                context.Tbservicedetail.Remove(servicedetail);
+                context.SaveChanges();
+            }
+        }
+
+        public void SaveBaoGia(Tbbaogia model)
+        {
+            if (model.BaogiaId == 0)
+            {
+                context.Tbbaogia.Add(model);
+            }
+            else
+            {
+                Tbbaogia baogia = context.Tbbaogia
+                    .FirstOrDefault(p => p.BaogiaId == model.BaogiaId);
+                if (baogia != null)
+                {
+                    baogia.BaogiaTitle1 = model.BaogiaTitle1;
+                    baogia.BaogiaTitle2 = model.BaogiaTitle2;
+                    baogia.BaogiaTitle3 = model.BaogiaTitle3;
+                    baogia.BaogiaTitle4 = model.BaogiaTitle4;
+                    baogia.BaogiaTitle5 = model.BaogiaTitle5;
+                    baogia.BaogiaTitle6 = model.BaogiaTitle6;
+                    baogia.BaogiaTitle7 = model.BaogiaTitle7;
+                    baogia.BaogiaTitle8 = model.BaogiaTitle8;
+                    baogia.BaogiaTitle9 = model.BaogiaTitle9;
+                    baogia.BaogiaContent = model.BaogiaContent;
+                    baogia.Position = model.Position;
+                }
+            }
+            context.SaveChanges();
+        }
+        public void BaoGiaDelete(int baogia_id)
+        {
+            var baogia = context.Tbbaogia.FirstOrDefault(x => x.BaogiaId == baogia_id);
+            if (baogia != null)
+            {
+                context.Tbbaogia.Remove(baogia);
+                context.SaveChanges();
+            }
+        }
+        public void SaveBaoGiaChiTiet(Tbbaogiachitiet model)
+        {
+            if (model.BaogiachitietId == 0)
+            {
+                context.Tbbaogiachitiet.Add(model);
+            }
+            else
+            {
+                Tbbaogiachitiet baogia = context.Tbbaogiachitiet
+                    .FirstOrDefault(p => p.BaogiachitietId == model.BaogiachitietId);
+                if (baogia != null)
+                {
+                    baogia.BaogiachitietTitle1 = model.BaogiachitietTitle1;
+                    baogia.BaogiachitietTitle2 = model.BaogiachitietTitle2;
+                    baogia.BaogiachitietTitle3 = model.BaogiachitietTitle3;
+                    baogia.BaogiachitietTitle4 = model.BaogiachitietTitle4;
+                    baogia.BaogiachitietTitle5 = model.BaogiachitietTitle5;
+                    baogia.BaogiachitietTitle6 = model.BaogiachitietTitle6;
+                    baogia.BaogiachitietTitle7 = model.BaogiachitietTitle7;
+                    baogia.BaogiachitietTitle8 = model.BaogiachitietTitle8;
+                    baogia.BaogiachitietTitle9 = model.BaogiachitietTitle9;
+                    baogia.BaogiachitietTitle10 = model.BaogiachitietTitle10;
+                    baogia.BaogiachitietContent = model.BaogiachitietContent;
+                    baogia.Position = model.Position;
+                }
+            }
+            context.SaveChanges();
+        }
+        public void BaoGiaChiTietDelete(int baogia_id)
+        {
+            var baogia = context.Tbbaogiachitiet.FirstOrDefault(x => x.BaogiachitietId == baogia_id);
+            if (baogia != null)
+            {
+                context.Tbbaogiachitiet.Remove(baogia);
+                context.SaveChanges();
+            }
+        }
+        public void SaveBaoGiaLienQuan(Tbbaogialienquan model)
+        {
+            if (model.BaogialienquanId == 0)
+            {
+                context.Tbbaogialienquan.Add(model);
+            }
+            else
+            {
+                Tbbaogialienquan baogia = context.Tbbaogialienquan
+                    .FirstOrDefault(p => p.BaogialienquanId == model.BaogialienquanId);
+                if (baogia != null)
+                {
+                    baogia.BaogialienquanTitle = model.BaogialienquanTitle;
+                    baogia.BaogiaId = model.BaogiaId;
+                    baogia.BaogialienquanDatemodified = model.BaogialienquanDatemodified;
+                    baogia.BaogialienquanContent = model.BaogialienquanContent;
+                }
+            }
+            context.SaveChanges();
+        }
+        public void BaoGiaLienQuanDelete(int baogia_id)
+        {
+            var baogia = context.Tbbaogialienquan.FirstOrDefault(x => x.BaogialienquanId == baogia_id);
+            if (baogia != null)
+            {
+                context.Tbbaogialienquan.Remove(baogia);
+                context.SaveChanges();
+            }
+        }
     }
 }

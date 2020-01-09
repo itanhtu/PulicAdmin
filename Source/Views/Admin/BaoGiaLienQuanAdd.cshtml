@@ -1,0 +1,42 @@
+﻿@model Tbbaogialienquan
+
+@{
+    ViewData["Title"] = "BaoGiaLienQuanAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>BaoGiaLienQuanAdd</h2>
+<div>
+    <form asp-action="BaoGiaLienQuanAdd" method="post" id="uploader">
+        <div class="modal-body">
+            <div asp-validation-summary="All"></div>
+            <p>
+                <label>Tên báo giá liên quan:</label>
+                <input asp-for="BaogialienquanTitle" />
+            </p>
+            <p>
+                <label>Chọn báo giá:</label>
+                <select asp-for="BaogiaId" asp-items="@(new SelectList(ViewBag.Category,"BaogiaId","BaogiaTitle1"))"></select>
+            </p>
+            <p>
+                <label>Thời gian:</label>
+                <input asp-for="BaogialienquanDatemodified" />
+            </p>
+            <p>
+                <label>Nội dung:</label>
+                <textarea asp-for="BaogialienquanContent" id="rtxBlogContent"></textarea>
+            </p>
+        </div>
+        <div class="modal-footer">
+            <button type="submit">Thêm</button>
+            <a asp-action="BaoGiaLienQuan" class="btn btn-default" data-dismiss="modal">Quay lại</a>
+        </div>
+    </form>
+</div>
+<script src="~/lib/ckeditor/ckeditor.js"></script>
+<script src="~/lib/ckeditor/adapters/jquery.js"></script>
+<script>
+    $("#rtxBlogContent").ckeditor();
+</script>
+
+

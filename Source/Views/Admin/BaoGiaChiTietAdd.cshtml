@@ -1,0 +1,76 @@
+﻿@model Tbbaogiachitiet
+@{
+    ViewData["Title"] = "BaoGiaChiTietAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>BaoGiaChiTietAdd</h2>
+<div>
+    <form asp-action="BaoGiaChiTietAdd" method="post" id="uploader">
+        <div class="modal-body">
+            <div asp-validation-summary="All"></div>
+            <p>
+                <label>Tên báo giá chi tiết:</label>
+                <input asp-for="BaogiachitietTitle1" />
+            </p>
+            <p>
+                <label>Chọn báo giá:</label>
+                <select asp-for="BaogiaId" asp-items="@(new SelectList(ViewBag.Category,"BaogiaId","BaogiaTitle1"))"></select>
+            </p>
+            <p>
+                <label>Mục1:</label>
+                <input asp-for="BaogiachitietTitle2" />
+            </p>
+            <p>
+                <label>Mục2:</label>
+                <input asp-for="BaogiachitietTitle3" />
+            </p>
+            <p>
+                <label>Mục3:</label>
+                <input asp-for="BaogiachitietTitle4" />
+            </p>
+            <p>
+                <label>Mục4:</label>
+                <input asp-for="BaogiachitietTitle5" />
+            </p>
+            <p>
+                <label>Mục5:</label>
+                <input asp-for="BaogiachitietTitle6" />
+            </p>
+            <p>
+                <label>Mục6:</label>
+                <input asp-for="BaogiachitietTitle7" />
+            </p>
+            <p>
+                <label>Mục7:</label>
+                <input asp-for="BaogiachitietTitle8" />
+            </p>
+            <p>
+                <label>Mục8:</label>
+                <input asp-for="BaogiachitietTitle9" />
+            </p>
+            <p>
+                <label>Mục9:</label>
+                <input asp-for="BaogiachitietTitle10" />
+            </p>
+            <p>
+                <label>Mẫu:</label>
+                <input asp-for="Hidden" />
+            </p>
+            <p>
+                <label>Nội dung:</label>
+                <textarea asp-for="BaogiachitietContent" id="rtxBlogContent"></textarea>
+            </p>
+        </div>
+        <div class="modal-footer">
+            <button type="submit">Thêm</button>
+            <a asp-action="BaoGiaChiTiet" class="btn btn-default" data-dismiss="modal">Quay lại</a>
+        </div>
+    </form>
+</div>
+<script src="~/lib/ckeditor/ckeditor.js"></script>
+<script src="~/lib/ckeditor/adapters/jquery.js"></script>
+<script>
+    $("#rtxBlogContent").ckeditor();
+</script>
+

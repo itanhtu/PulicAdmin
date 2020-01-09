@@ -1,0 +1,70 @@
+﻿@model Tbbaogia
+@{
+    ViewData["Title"] = "BaoGiaEdit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>BaoGiaEdit</h2>
+<div>
+    <form asp-action="BaoGiaAdd" method="post" id="uploader">
+        <div class="modal-body">
+            <input asp-for="BaogiaId" type="hidden" />
+            <div asp-validation-summary="All"></div>
+            <p>
+                <label>Tên báo giá:</label>
+                <input asp-for="BaogiaTitle1" />
+            </p>
+            <p>
+                <label>Mục1:</label>
+                <input asp-for="BaogiaTitle2" />
+            </p>
+            <p>
+                <label>Mục2:</label>
+                <input asp-for="BaogiaTitle3" />
+            </p>
+            <p>
+                <label>Mục3:</label>
+                <input asp-for="BaogiaTitle4" />
+            </p>
+            <p>
+                <label>Mục4:</label>
+                <input asp-for="BaogiaTitle5" />
+            </p>
+            <p>
+                <label>Mục5:</label>
+                <input asp-for="BaogiaTitle6" />
+            </p>
+            <p>
+                <label>Mục6:</label>
+                <input asp-for="BaogiaTitle7" />
+            </p>
+            <p>
+                <label>Mục7:</label>
+                <input asp-for="BaogiaTitle8" />
+            </p>
+            <p>
+                <label>Mục8:</label>
+                <input asp-for="BaogiaTitle9" />
+            </p>
+            <p>
+                <label>Vị trí hiển thị:</label>
+                <input asp-for="Position" />
+            </p>
+            <p>
+                <label>Nội dung:</label>
+                <textarea asp-for="BaogiaContent" id="rtxBlogContent"></textarea>
+            </p>
+        </div>
+        <div class="modal-footer">
+            <button type="submit">Lưu</button>
+            <a asp-action="BaoGia" class="btn btn-default" data-dismiss="modal">Quay lại</a>
+        </div>
+    </form>
+</div>
+<script src="~/lib/ckeditor/ckeditor.js"></script>
+<script src="~/lib/ckeditor/adapters/jquery.js"></script>
+<script>
+    $("#rtxBlogContent").ckeditor();
+</script>
+
+

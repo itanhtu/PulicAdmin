@@ -261,10 +261,11 @@ namespace Source.Controllers
 
         public ViewResult DuAnEdit(int id)
         {
-            ViewBag.Categories = db.tbnewscates.ToList();
+            ViewBag.Categories = db.tbcategories.ToList();
             ViewBag.Service = db.tbservices.ToList();
             var project = db.tbprojects.FirstOrDefault(x => x.ProjectId == id);
             var model = new Project();
+            model.ProjectId = project.ProjectId;
             model.ProjectName = project.ProjectName;
             model.CategoryId = project.CategoryId;
             model.ServiceId = project.ServiceId;
@@ -336,6 +337,37 @@ namespace Source.Controllers
             var model = db.tbservicedetails;
             return View(model);
         }
+        public IActionResult DichVuChiTietAdd()
+        {
+            ViewBag.Category = db.tbservices;
+            var model = new Tbservicedetail();
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult DichVuChiTietAdd(Tbservicedetail servicedetail)
+        {
+            db.SaveDichVuChiTiet(servicedetail);
+            return RedirectToAction("DichVuChiTiet");
+        }
+        public ActionResult DichVuChiTietDelete(int id)
+        {
+            db.DichVuChiTietDelete(id);
+            return RedirectToAction("DichVuChiTiet");
+        }
+        public ViewResult DichVuChiTietEdit(int id)
+        {
+            ViewBag.Category = db.tbservices;
+            var servicedetail = db.tbservicedetails.FirstOrDefault(x => x.ServicedetailId == id);
+            return View(servicedetail);
+        }
+        [HttpPost]
+        public ActionResult DichVuChiTietEdit(Tbservicedetail servicedetail)
+        {
+            db.SaveDichVuChiTiet(servicedetail);
+            return RedirectToAction("DichVuChiTiet");
+        }
+
         public IActionResult NhomLoai()
         {
             var model = db.tbgroupcates;
@@ -375,21 +407,118 @@ namespace Source.Controllers
             var model = db.tbcontacts;
             return View(model);
         }
+
+
+
         public IActionResult BaoGia()
         {
             var model = db.tbbaogias;
             return View(model);
         }
+
+        public IActionResult BaoGiaAdd()
+        {
+            var model = new Tbbaogia();
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult BaoGiaAdd(Tbbaogia baogia)
+        {
+            db.SaveBaoGia(baogia);
+            return RedirectToAction("BaoGia");
+        }
+        public ActionResult BaoGiaDelete(int id)
+        {
+            db.BaoGiaDelete(id);
+            return RedirectToAction("BaoGia");
+        }
+        public ViewResult BaoGiaEdit(int id)
+        {
+            var baogia = db.tbbaogias.FirstOrDefault(x => x.BaogiaId == id);
+            return View(baogia);
+        }
+        [HttpPost]
+        public ActionResult BaoGiaEdit(Tbbaogia baogia)
+        {
+            db.SaveBaoGia(baogia);
+            return RedirectToAction("BaoGia");
+        }
+
         public IActionResult BaoGiaChiTiet()
         {
             var model = db.tbbaogiachitiets;
             return View(model);
         }
+
+        public IActionResult BaoGiaChiTietAdd()
+        {
+            ViewBag.Category = db.tbbaogias;
+            var model = new Tbbaogiachitiet();
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult BaoGiaChiTietAdd(Tbbaogiachitiet baogia)
+        {
+            db.SaveBaoGiaChiTiet(baogia);
+            return RedirectToAction("BaoGiaChiTiet");
+        }
+        public ActionResult BaoGiaChiTietDelete(int id)
+        {
+            db.BaoGiaChiTietDelete(id);
+            return RedirectToAction("BaoGiaChiTiet");
+        }
+        public ViewResult BaoGiaChiTietEdit(int id)
+        {
+            ViewBag.Category = db.tbbaogias;
+            var baogia = db.tbbaogiachitiets.FirstOrDefault(x => x.BaogiachitietId == id);
+            return View(baogia);
+        }
+        [HttpPost]
+        public ActionResult BaoGiaChiTietEdit(Tbbaogiachitiet baogia)
+        {
+            db.SaveBaoGiaChiTiet(baogia);
+            return RedirectToAction("BaoGiaChiTiet");
+        }
+
         public IActionResult BaoGiaLienQuan()
         {
             var model = db.tbbaogialienquans;
             return View(model);
         }
+
+        public IActionResult BaoGiaLienQuanAdd()
+        {
+            ViewBag.Category = db.tbbaogias;
+            var model = new Tbbaogialienquan();
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult BaoGiaLienQuanAdd(Tbbaogialienquan baogialienquan)
+        {
+            db.SaveBaoGiaLienQuan(baogialienquan);
+            return RedirectToAction("BaoGiaLienQuan");
+        }
+        public ActionResult BaoGiaLienQuanDelete(int id)
+        {
+            db.BaoGiaLienQuanDelete(id);
+            return RedirectToAction("BaoGiaLienQuan");
+        }
+        public ViewResult BaoGiaLienQuanEdit(int id)
+        {
+            ViewBag.Category = db.tbbaogias;
+            var baogialienquan = db.tbbaogialienquans.FirstOrDefault(x => x.BaogialienquanId == id);
+            return View(baogialienquan);
+        }
+        [HttpPost]
+        public ActionResult BaoGiaLienQuanEdit(Tbbaogialienquan baogia)
+        {
+            db.SaveBaoGiaLienQuan(baogia);
+            return RedirectToAction("BaoGiaLienQuan");
+        }
+
         public IActionResult Test()
         {
             return View();

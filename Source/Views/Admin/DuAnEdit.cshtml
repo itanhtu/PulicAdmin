@@ -1,11 +1,12 @@
 ﻿@model Project
 @{
-    ViewData["Title"] = "DuAnAdd";
+    ViewData["Title"] = "DuAnEdit";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <div>
-    <form enctype="multipart/form-data" asp-action="DuAnAdd" method="post" id="uploader">
+    <form enctype="multipart/form-data" asp-action="DuAnEdit" method="post" id="uploader">
         <div class="modal-body">
+            <input type="hidden" asp-for="ProjectId" />
             <div asp-validation-summary="All"></div>
             <p>
                 <label>Tên dự án:</label>
@@ -34,11 +35,11 @@
             <p>
                 <label>Ảnh:</label>
                 <input asp-for="Project_UpImage" onchange="showPreview1(this)" />
-                <img id="imgPreview1" style="width:100px" src="/admin_images/up-img.png" />
+                <img id="imgPreview1" style="width:100px" src="@Model.ProjectLink" />
             </p>
         </div>
         <div class="modal-footer">
-            <button type="submit">Thêm</button>
+            <button type="submit">Lưu</button>
             <a asp-action="DuAn" class="btn btn-default" data-dismiss="modal">Quay lại</a>
         </div>
     </form>

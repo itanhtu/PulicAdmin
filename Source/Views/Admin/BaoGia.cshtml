@@ -8,7 +8,7 @@
 <h2>BaoGia</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="BaoGiaAdd">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -32,9 +32,8 @@
                 @Html.DisplayFor(modelItem => item.Position)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.BaogiaId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.BaogiaId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.BaogiaId">Delete</a>
+                <a asp-action="BaoGiaEdit" asp-route-id="@item.BaogiaId">Edit</a> |
+                <a asp-action="BaoGiaDelete" asp-route-id="@item.BaogiaId">Delete</a>
             </td>
         </tr>
 }

@@ -50,7 +50,15 @@ namespace Source.Models
         void NhomDuAnDelete(int category_id);
         void SaveDichVu(Tbservice service);
         void DichVuDelete(int service_id);
+        void SaveDichVuChiTiet(Tbservicedetail servicedetail);
+        void DichVuChiTietDelete(int servicedetail_id);
         void SaveDuAn(Tbproject project);
         void DuAnDelete(int project_id);
+        void SaveBaoGia(Tbbaogia baogia);
+        void BaoGiaDelete(int baogia_id);
+        void SaveBaoGiaChiTiet(Tbbaogiachitiet baogiachitiet);
+        void BaoGiaChiTietDelete(int baogiachitiet_id);
+        void SaveBaoGiaLienQuan(Tbbaogialienquan baogialienquan);
+        void BaoGiaLienQuanDelete(int baogialienquan_id);
     }
 }
