@@ -39,7 +39,7 @@ namespace Source.Models
         IQueryable<Tbservicedetail> tbservicedetails { get; }
         IQueryable<Tbslide> tbslides { get; }
         IQueryable<Tbvideo> tbvideos { get; }
-        IQueryable<abc> abcs { get; }
+        IQueryable<Abc> abcs { get; }
         void SaveNewsCate(Tbnewscate newscate);
         void NewsCateDelete(int newscate_id);
         void SaveNews(Tbnews news);

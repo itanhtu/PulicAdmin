@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace Source.Models.DBF
 {
@@ -11,7 +10,7 @@ namespace Source.Models.DBF
             Tbproject = new HashSet<Tbproject>();
             Tbservicedetail = new HashSet<Tbservicedetail>();
         }
-        [Key]
+
         public int ServiceId { get; set; }
         public string ServiceTitle { get; set; }
         public string ServiceSummary { get; set; }

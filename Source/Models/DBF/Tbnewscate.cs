@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace Source.Models.DBF
 {
@@ -10,7 +9,7 @@ namespace Source.Models.DBF
         {
             Tbnews = new HashSet<Tbnews>();
         }
-        [Key]
+
         public int NewscateId { get; set; }
         public string NewscateName { get; set; }
         public int? Position { get; set; }

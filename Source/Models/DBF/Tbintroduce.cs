@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace Source.Models.DBF
 {
     public partial class Tbintroduce
     {
-        [Key]
         public int IntroId { get; set; }
         public string IntroTitle { get; set; }
         public string IntroImage { get; set; }

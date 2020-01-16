@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace Source.Models.DBF
 {
     public partial class Tbadmin
     {
-        [Key]
         public string AdminEmail { get; set; }
         public string AdminPassword { get; set; }
         public string AdminFullname { get; set; }

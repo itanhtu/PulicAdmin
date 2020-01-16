@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace Source.Models.DBF
 {
     public partial class TbseoDetail
     {
-        [Key]
         public int SeodetailId { get; set; }
         public Guid? SeoGuid { get; set; }
         public string Objectguid { get; set; }

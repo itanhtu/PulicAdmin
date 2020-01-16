@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace Source.Models.DBF
 {
@@ -10,7 +9,7 @@ namespace Source.Models.DBF
         {
             Tbbaogialienquan = new HashSet<Tbbaogialienquan>();
         }
-        [Key]
+
         public int BaogiaId { get; set; }
         public string BaogiaTitle1 { get; set; }
         public string BaogiaTitle2 { get; set; }

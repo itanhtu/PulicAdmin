@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace Source.Models.DBF
 {
     public partial class Tbcategory
     {
-        [Key]
+        public Tbcategory()
+        {
+            Tbproject = new HashSet<Tbproject>();
+        }
+
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
         public string CategoryDepcription { get; set; }
@@ -21,10 +24,6 @@ namespace Source.Models.DBF
         public int? GroupcateId { get; set; }
 
         public Tbgroupcate Groupcate { get; set; }
-        public virtual ICollection<Tbproject> Tbproject { get; set; }
-        public Tbcategory()
-        {
-            Tbproject = new HashSet<Tbproject>();
-        }
+        public ICollection<Tbproject> Tbproject { get; set; }
     }
 }

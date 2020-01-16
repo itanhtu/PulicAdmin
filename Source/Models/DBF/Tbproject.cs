@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace Source.Models.DBF
 {
@@ -10,7 +9,7 @@ namespace Source.Models.DBF
         {
             Tbimageproject = new HashSet<Tbimageproject>();
         }
-        [Key]
+
         public int ProjectId { get; set; }
         public string ProjectName { get; set; }
         public string ProjectContent { get; set; }

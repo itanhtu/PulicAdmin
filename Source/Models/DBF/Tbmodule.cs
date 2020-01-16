@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace Source.Models.DBF
 {
@@ -10,7 +9,7 @@ namespace Source.Models.DBF
         {
             Tbform = new HashSet<Tbform>();
         }
-        [Key]
+
         public int ModuleId { get; set; }
         public string ModuleName { get; set; }
         public int? ModuleParent { get; set; }

@@ -15,6 +15,8 @@ namespace Source.Models.DBF
         {
         }
 
+        public virtual DbSet<Abc> Abc { get; set; }
+        public virtual DbSet<Bbbbb> Bbbbb { get; set; }
         public virtual DbSet<Tbadmin> Tbadmin { get; set; }
         public virtual DbSet<Tbbaivietuser> Tbbaivietuser { get; set; }
         public virtual DbSet<Tbbanggiachitietuser> Tbbanggiachitietuser { get; set; }
@@ -46,8 +48,6 @@ namespace Source.Models.DBF
         public virtual DbSet<Tbservicedetail> Tbservicedetail { get; set; }
         public virtual DbSet<Tbslide> Tbslide { get; set; }
         public virtual DbSet<Tbvideo> Tbvideo { get; set; }
-        public virtual DbSet<abc> abcs { get; set; }
-
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -61,6 +61,22 @@ namespace Source.Models.DBF
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:DefaultSchema", "db_owner");
+
+            modelBuilder.Entity<Abc>(entity =>
+            {
+                entity.ToTable("abc");
+
+                entity.Property(e => e.AbcId).HasColumnName("abc_id");
+            });
+
+            modelBuilder.Entity<Bbbbb>(entity =>
+            {
+                entity.HasKey(e => e.BId);
+
+                entity.ToTable("bbbbb");
+
+                entity.Property(e => e.BId).HasColumnName("b_id");
+            });
 
             modelBuilder.Entity<Tbadmin>(entity =>
             {

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace Source.Models.DBF
 {
@@ -10,7 +9,7 @@ namespace Source.Models.DBF
         {
             Tbcategory = new HashSet<Tbcategory>();
         }
-        [Key]
+
         public int GroupcateId { get; set; }
         public string GroupcateName { get; set; }
         public string GroupcateDepcription { get; set; }

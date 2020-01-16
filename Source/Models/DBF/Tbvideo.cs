@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace Source.Models.DBF
 {
     public partial class Tbvideo
     {
-        [Key]
         public int VideoId { get; set; }
         public string VideoTitle { get; set; }
         public string VideoSummary { get; set; }

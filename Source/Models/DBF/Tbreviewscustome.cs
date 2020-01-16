@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace Source.Models.DBF
 {
     public partial class Tbreviewscustome
     {
-        [Key]
         public int ReviewsId { get; set; }
         public string ReviewName { get; set; }
         public string ReviewIcon { get; set; }

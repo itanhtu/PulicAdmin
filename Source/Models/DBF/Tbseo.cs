@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace Source.Models.DBF
 {
@@ -10,7 +9,7 @@ namespace Source.Models.DBF
         {
             TbseoDetail = new HashSet<TbseoDetail>();
         }
-        [Key]
+
         public int SeoId { get; set; }
         public string SeoName { get; set; }
         public string SeoUrl { get; set; }

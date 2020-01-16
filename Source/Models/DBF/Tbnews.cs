@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace Source.Models.DBF
 {
     public partial class Tbnews
     {
-        [Key]
         public int NewsId { get; set; }
         public string NewsName { get; set; }
         public int? Position { get; set; }

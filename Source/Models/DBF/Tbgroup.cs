@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace Source.Models.DBF
 {
@@ -10,7 +9,7 @@ namespace Source.Models.DBF
         {
             Tbadmin = new HashSet<Tbadmin>();
         }
-        [Key]
+
         public int GroupId { get; set; }
         public string GroupName { get; set; }
         public int? GroupPosition { get; set; }

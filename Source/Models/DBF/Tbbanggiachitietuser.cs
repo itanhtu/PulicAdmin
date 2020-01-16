@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace Source.Models.DBF
 {
     public partial class Tbbanggiachitietuser
     {
-        [Key]
         public int BanggiachitietuserId { get; set; }
         public string BanggiachitietuserTitle { get; set; }
         public string BanggiachitietuserTitle1 { get; set; }

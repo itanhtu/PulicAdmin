@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace Source.Models.DBF
 {
     public partial class Tbcontact
     {
-        [Key]
         public int ContactId { get; set; }
         public string ContactName { get; set; }
         public string ContactPhone { get; set; }

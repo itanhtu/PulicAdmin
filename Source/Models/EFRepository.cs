@@ -44,7 +44,7 @@ namespace Source.Models
         public IQueryable<Tbservicedetail> tbservicedetails => context.Tbservicedetail;
         public IQueryable<Tbslide> tbslides => context.Tbslide;
         public IQueryable<Tbvideo> tbvideos => context.Tbvideo;
-        public IQueryable<abc> abcs => context.abcs;
+        public IQueryable<Abc> abcs => context.Abc;
         public void SaveNewsCate(Tbnewscate newscate)
         {
             if (newscate.NewscateId == 0)

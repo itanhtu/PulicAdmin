@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace Source.Models.DBF
 {
     public partial class Tbimageproject
     {
-        [Key]
         public int ImageId { get; set; }
         public string ImageLink { get; set; }
         public string ImageTitle { get; set; }
